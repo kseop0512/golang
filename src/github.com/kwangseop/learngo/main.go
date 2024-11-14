@@ -45,6 +45,8 @@ func main() {
 }
 */
 
+/*
+// golang if else
 func canIDrink(age int) bool {
 	if kreanAge := age + 1; kreanAge < 18 {
 		return false
@@ -55,4 +57,40 @@ func canIDrink(age int) bool {
 
 func main() {
 	fmt.Println(canIDrink(16))
+}
+*/
+
+// Swtich
+
+func canIDrink(age int) bool {
+	/*
+		switch age {
+		case 10:
+			return false
+		case 18:
+			return true
+		}
+	*/
+	/*
+		switch {
+		case age < 18:
+			return false
+		case age == 18:
+			return true
+		case age > 50:
+			return false
+		}
+	*/
+
+	switch koreanAge := age + 2; koreanAge {
+	case 10:
+		return false
+	case 18:
+		return true
+	}
+	return false
+}
+
+func main() {
+	fmt.Println(canIDrink(18))
 }
