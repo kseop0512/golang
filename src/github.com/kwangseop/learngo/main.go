@@ -21,7 +21,6 @@ func main() {
 	// repeatMe("nico", "lynn", "dal", "marl", "flynn")
 	totalLength, up := lenAndUpper("kseop")
 	fmt.Println(totalLength, up)
-
 }
 
 //defer
