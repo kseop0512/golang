@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 // func repeatMe(words ...string) {
 // 	fmt.Println(words)
 // }
 
+//defer
+/*
 func lenAndUpper(name string) (length int, uppercase string) {
 	//defer 함수 실행 후 동작
 	defer fmt.Println("I'm done")
@@ -16,11 +17,29 @@ func lenAndUpper(name string) (length int, uppercase string) {
 	uppercase = strings.ToUpper(name)
 	return // 필수 X
 }
+*/
 
-func main() {
-	// repeatMe("nico", "lynn", "dal", "marl", "flynn")
-	totalLength, up := lenAndUpper("kseop")
-	fmt.Println(totalLength, up)
+// loop (for) ex) for of, for in
+
+func superAdd(numbers ...int) int {
+	// loop with range
+	// for index, number := range numbers {
+	// 	fmt.Println(index, number)
+	// }
+
+	// for i := 0; i < len(numbers); i++ {
+	// 	fmt.Println(numbers[i])
+	// }
+
+	total := 0
+	for _, number := range numbers {
+		total += number
+	}
+
+	return total
 }
 
-//defer
+func main() {
+	result := superAdd(1, 2, 3, 4, 5, 6)
+	fmt.Println(result)
+}
