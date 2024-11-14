@@ -10,9 +10,11 @@ import (
 // }
 
 func lenAndUpper(name string) (length int, uppercase string) {
+	//defer 함수 실행 후 동작
+	defer fmt.Println("I'm done")
 	length = len(name)
 	uppercase = strings.ToUpper(name)
-	return
+	return // 필수 X
 }
 
 func main() {
@@ -21,3 +23,5 @@ func main() {
 	fmt.Println(totalLength, up)
 
 }
+
+//defer
