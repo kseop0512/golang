@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // func repeatMe(words ...string) {
 // 	fmt.Println(words)
@@ -91,7 +93,18 @@ func canIDrink(age int) bool {
 	return false
 }
 
+/*
 func main() {
 	fmt.Println(canIDrink(18))
+}
 
+
+*/
+
+// Pointers
+func main() {
+	a := 2
+	b := &a
+	*b = 202020
+	fmt.Println(a)
 }
