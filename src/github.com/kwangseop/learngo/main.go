@@ -93,4 +93,5 @@ func canIDrink(age int) bool {
 
 func main() {
 	fmt.Println(canIDrink(18))
+
 }
