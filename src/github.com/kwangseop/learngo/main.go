@@ -101,10 +101,32 @@ func main() {
 
 */
 
+/*
 // Pointers
 func main() {
 	a := 2
 	b := &a
 	*b = 202020
 	fmt.Println(a)
+}
+
+*/
+
+/*
+// Arrays and Slices
+func main() {
+	names := []string{"nico", "lynn", "dal"}
+	names = append(names, "kseop")
+	fmt.Println(names)
+}
+*/
+
+// Maps
+
+// key : value
+func main() {
+	nico := map[string]string{"name": "kseop", "age": "12"}
+	for key, _ := range nico {
+		fmt.Println(key)
+	}
 }
