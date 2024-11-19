@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // func repeatMe(words ...string) {
 // 	fmt.Println(words)
@@ -123,10 +121,25 @@ func main() {
 
 // Maps
 
+/*
 // key : value
 func main() {
 	nico := map[string]string{"name": "kseop", "age": "12"}
 	for key, _ := range nico {
 		fmt.Println(key)
 	}
+}
+*/
+
+// Structs
+type person struct {
+	name    string
+	age     int
+	favFood []string
+}
+
+func main() {
+	favFood := []string{"kimchi", "raman"}
+	seop := person{name: "kseop", age: 22, favFood: favFood}
+	fmt.Println(seop.name)
 }
