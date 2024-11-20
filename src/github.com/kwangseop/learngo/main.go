@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+
+	"github.com/kwangseop/learngo/accounts"
+)
+
 // func repeatMe(words ...string) {
 // 	fmt.Println(words)
 // }
@@ -145,3 +151,7 @@ func main() {
 */
 
 // Account + NewAccount
+func main() {
+	account := accounts.NewAccount("kseop")
+	fmt.Println(account)
+}
