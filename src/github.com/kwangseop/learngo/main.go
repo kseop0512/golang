@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func repeatMe(words ...string) {
 // 	fmt.Println(words)
 // }
@@ -131,6 +129,7 @@ func main() {
 }
 */
 
+/*
 // Structs
 type person struct {
 	name    string
@@ -143,3 +142,6 @@ func main() {
 	seop := person{name: "kseop", age: 22, favFood: favFood}
 	fmt.Println(seop.name)
 }
+*/
+
+// Account + NewAccount
