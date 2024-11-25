@@ -159,5 +159,5 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(account.Balance())
+	fmt.Println(account.String())
 }
