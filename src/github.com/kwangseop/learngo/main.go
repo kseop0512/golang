@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/kwangseop/learngo/mydict"
 )
@@ -224,6 +225,25 @@ func main() {
 }
 */
 
+// Channels
 func main() {
+	c := make(chan string)
+	people := [5]string{"seop", "hee", "dal", "japanguy", "larry"}
+	for _, person := range people {
+		go isSexy(person, c)
+	}
 
+	for i := 0; i < len(people); i++ {
+		fmt.Println(<-c)
+	}
+	// fmt.Println("Waiting for message")
+
+	// fmt.Println("Received thie message:", <-c)
+	// fmt.Println("Received thie message:", <-c)
+}
+
+func isSexy(person string, c chan string) {
+	time.Sleep(time.Second * 10)
+	fmt.Println(person)
+	c <- person + " is sexy"
 }
