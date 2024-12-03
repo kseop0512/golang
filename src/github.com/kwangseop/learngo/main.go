@@ -234,6 +234,7 @@ func main() {
 	}
 
 	for i := 0; i < len(people); i++ {
+		fmt.Println("waiting for", i)
 		fmt.Println(<-c)
 	}
 	// fmt.Println("Waiting for message")
@@ -244,6 +245,5 @@ func main() {
 
 func isSexy(person string, c chan string) {
 	time.Sleep(time.Second * 10)
-	fmt.Println(person)
 	c <- person + " is sexy"
 }
