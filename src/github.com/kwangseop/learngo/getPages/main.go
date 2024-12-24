@@ -12,6 +12,8 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
+// https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=49545109&recommend_ids=eJxNj8sRw0AIQ6vJHRDic04h7r%2BL2N7Mssc3Qk%2BDN9kpeZXqJ7%2FetMqWq8UWkmmxUw%2BI6o2x0kaWbQwkFLsbqO4%2BsCmPSlY3xCNGVSzUpFrw2SXEk4PtDtt4D4XIpCX64l9lhB4qqmsdxynQfXyrCJ9%2FvYxv9weTbkB2&view_type=search&searchword=python&searchType=search&gz=1&t_ref_content=generic&t_ref=search&relayNonce=cdf55a40c42d3da27b2c&paid_fl=n&search_uuid=6e59ff77-485b-4c89-b1e7-dcd17dc2df48&immediately_apply_layer_open=n#seq=0
+
 type extractedJob struct {
 	id       string
 	title    string
@@ -44,14 +46,15 @@ func writeJobs(jobs []extractedJob) {
 	w := csv.NewWriter(file)
 	defer w.Flush()
 
-	headers := []string{"ID", "Title", "Location"}
+	headers := []string{"Link", "ID", "Title", "Location"}
 
 	wErr := w.Write(headers)
 	checkErr(wErr)
 
 	for _, job := range jobs {
 		// id는 링크형태로 변경
-		jobSlice := []string{job.id, job.title, job.location}
+		// https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=
+		jobSlice := []string{"https://www.saramin.co.kr/zf_user/jobs/relay/view?isMypage=no&rec_idx=" + job.id, job.id, job.title, job.location}
 		jwErr := w.Write(jobSlice)
 		checkErr(jwErr)
 	}
